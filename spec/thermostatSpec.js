@@ -28,26 +28,26 @@ describe('Thermostat', function(){
   });
 
   it('has a minimum temp of 10 degrees', function(){
-    for (var i = 1; i < 11; i++) {
+    for (var i = 1; i < 12; i++) {
       thermostat.down();
     }
     expect(thermostat.getCurrentTemperature()).toEqual(10);
   });
 
   it('expect power saving mode to be on by default', function() {
-    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+    expect(thermostat.powerSavingMode).toBe(true);
   });
 
   it('can switch power saving mode off', function() {
-    thermostat.switchPowerSavingModeOff();
-    expect(thermostat.isPowerSavingModeOn()).toBe(false);
+    thermostat.togglePSM();
+    expect(thermostat.powerSavingMode).toBe(false);
   });
 
   it('can switch power saving mode back on', function() {
-    thermostat.switchPowerSavingModeOff();
-    expect(thermostat.isPowerSavingModeOn()).toBe(false);
-    thermostat.switchPowerSavingModeOn();
-    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+    thermostat.togglePSM();
+    expect(thermostat.powerSavingMode).toBe(false);
+    thermostat.togglePSM();
+    expect(thermostat.powerSavingMode).toBe(true);
   });
 
   it('can reset temperature to a default temp (20 degrees)', function() {
@@ -60,7 +60,7 @@ describe('Thermostat', function(){
 
   describe('when power saving mode is on', function(){
     it('has a maximum temperature of 25 degrees', function(){
-      for (var i = 1; i < 6; i++) {
+      for (var i = 1; i < 7; i++) {
         thermostat.up();
       }
       expect(thermostat.getCurrentTemperature()).toEqual(25);
@@ -69,15 +69,15 @@ describe('Thermostat', function(){
 
   describe('When power saving mode is off', function(){
     it('has a maximum temperature of 32 degrees', function(){
-      for (var i = 1; i < 13; i++) {
-        thermostat.switchPowerSavingModeOff();
+      for (var i = 1; i < 14; i++) {
+        thermostat.togglePSM();
         thermostat.up();
       }
       expect(thermostat.getCurrentTemperature()).toEqual(32);
     });
   });
 
-  describe('It has energy usage levels', function(){
+  describe('Energy usage levels', function(){
     it('is at low energy usage if temperature is <18 degrees', function(){
       for (var i = 1; i < 4; i++) {
         thermostat.down();

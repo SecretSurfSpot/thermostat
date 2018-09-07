@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Thermostat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="src/thermostat.js"></script>
+  <script src="src/jquery.js"></script>
+  <script src="src/interface.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="wrapper">
+
+    <div id="thermo_body">
+        <span id="temp">
+          <span id="temp_num">20</span>
+          <span id="celsius">&#8451;</span>
+        </span>
+        <span id="energy">
+          <span id="powerSaveDisplay">Power Save</span>
+          <span id="energyUsage"></span>
+        </span>
+    </div>
+
+    <div class="btn" id="minus">
+      <p class="btn-icon">-</p>
+    </div>
+
+    <div id="utility_btn">
+      <div class="btn" id="reset">
+        <p class="btn-text">Reset</p>
+      </div>
+      <div class="btn" id="powerSave">
+        <p class="btn-text">PSM</p>
+      </div>
+    </div>
+
+    <div class="btn" id="plus">
+      <p class="btn-icon">+</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

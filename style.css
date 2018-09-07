@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  position: relative;
+}
+
+#wrapper {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr, 1fr;
+}
+
+#thermo_body {
+  background-color: cadetblue;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  grid-column: 1 / 4;
+  display: grid;
+  height: 100%;
+}
+
+#minus {
+  background-color: coral;
+  grid-column: 1 / 2;
+}
+
+#reset {
+  background-color: darkseagreen;
+}
+
+#utility_btn {
+grid-column: 2 / 3;
+display: grid;
+grid-template-columns: 1fr;
+}
+
+#plus {
+  background-color: darkkhaki;
+  grid-column: 3 / 4;
+}
+
+#powerSave {
+  background-color: darkseagreen;
+}
+
+#temp {
+  font-size: 8em;
+}
+
+.btn-icon {
+  font-size: 4em;
+}
+
+.btn-text {
+  font-size: 1.5em;
+}
+
+#powerSaveDisplay {
+  color: grey;
+  margin-right: 50px;
+}
+
+#celsius {
+  font-size: .2em;
+  vertical-align: text-top;
+  align: left;
+  padding-top: 50px;
+}

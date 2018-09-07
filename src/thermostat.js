@@ -16,41 +16,31 @@ Thermostat.prototype.getCurrentTemperature = function() {
 };
 
 Thermostat.prototype.up = function() {
-  if (this.isMaximumTemperature()){
-    return;
+  if (!this.isMaximumTemperature()){
+    return this.temperature++;
   }
-  return this.temperature += 1;
 };
 
 Thermostat.prototype.down = function() {
-  if(this.isMinimumTemperature()){ //using 'is' denotes function returns a boolean
-    return;
+  if(!this.isMinimumTemperature()){ //using 'is' denotes function returns a boolean
+    return this.temperature--;
   }
-  this.temperature -= 1;
 };
 
 Thermostat.prototype.isMinimumTemperature = function() { //using 'is' denotes function returns a boolean
-  this.temperature === this.MINIMUM_TEMPERATURE;
+  return this.temperature === this.MINIMUM_TEMPERATURE;
 };
 
 Thermostat.prototype.isMaximumTemperature = function() {
-  if (this.isPowerSavingModeOn() === true) {
+  if (this.powerSavingMode === true) {
     return this.temperature === this.MAX_TEMP_PSM_ON;
   } else {
     return this.temperature === this.MAX_TEMP_PSM_OFF;
   }
 };
 
-Thermostat.prototype.isPowerSavingModeOn = function() { //getter method
-  return this.powerSavingMode === true;
-};
-
-Thermostat.prototype.switchPowerSavingModeOff = function() {
-  this.powerSavingMode = false;
-};
-
-Thermostat.prototype.switchPowerSavingModeOn = function() {
-  this.powerSavingMode = true;
+Thermostat.prototype.togglePSM = function() {
+  this.powerSavingMode = !this.powerSavingMode
 };
 
 Thermostat.prototype.reset = function() {

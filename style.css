@@ -3,7 +3,18 @@ body {
   position: relative;
 }
 
+#temperatureAtTop {
+  font-family: "Verdana";
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr, 1fr;
+}
+
 #wrapper {
+  font-family: "Verdana";
   width: 50%;
   text-align: center;
   margin: auto;
@@ -14,57 +25,66 @@ body {
 
 #thermo_body {
   background-color: cadetblue;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  /* padding-top: 5px;
+  padding-bottom: 5px; */
   grid-column: 1 / 4;
   display: grid;
-  height: 100%;
+  height: 200px;
+}
+
+#temp_num{
+  font-size: 6em;
+}
+
+#celsius {
+  font-size: 1em;
+  align: left;
+}
+
+#powerSaveDisplay {
+  color: lightgreen;
+  margin-right: 50px;
+}
+
+#energyUsage {
+  color: black;
+}
+
+#utility_btn {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100px;
 }
 
 #minus {
   background-color: coral;
   grid-column: 1 / 2;
+  height: 100px
 }
 
 #reset {
   background-color: darkseagreen;
+  font-size: 1em;
+  height: 50px;
 }
 
-#utility_btn {
-grid-column: 2 / 3;
-display: grid;
-grid-template-columns: 1fr;
+#powerSave {
+  background-color: darkseagreen;
+  font-size: 1em;
+  height: 50px;
 }
 
 #plus {
   background-color: darkkhaki;
   grid-column: 3 / 4;
-}
-
-#powerSave {
-  background-color: darkseagreen;
-}
-
-#temp {
-  font-size: 8em;
+  height: 100px
 }
 
 .btn-icon {
-  font-size: 4em;
+  font-size: 2em;
 }
 
 .btn-text {
-  font-size: 1.5em;
-}
-
-#powerSaveDisplay {
-  color: grey;
-  margin-right: 50px;
-}
-
-#celsius {
-  font-size: .2em;
-  vertical-align: text-top;
-  align: left;
-  padding-top: 50px;
+  font-size: 1em;
 }

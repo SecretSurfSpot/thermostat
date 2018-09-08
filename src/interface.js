@@ -1,35 +1,40 @@
-var thermostat = new Thermostat;
-
 $(document).ready(function() {
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+    $('#current-temperature').text(data.main.temp);
+  })
 
-  $("#plus").click(function(event) {
-    thermostat.up();
-    $("#energyUsage").html(thermostat.energyUsage());
-    $("#temp_num").html(thermostat.temperature);
-  });
+  var thermostat = new Thermostat;
+
+  energyAndTemperature = function(){
+    $("#energyUsage").html(thermostat.energyUsage()); // update view
+    $("#temp_num").html(thermostat.temperature); //update view
+  }
+
+  $("#plus").click(function(event) { // event listener
+    thermostat.up(); // update mdoel
+    energyAndTemperature(); //update view
+  })
 
   $("#minus").click(function(event) {
     thermostat.down();
-    $("#energyUsage").html(thermostat.energyUsage());
-    $("#temp_num").html(thermostat.temperature);
-  });
+    energyAndTemperature();
+  })
 
   $("#reset").click(function(event) {
     thermostat.reset();
-    $("#energyUsage").html(thermostat.energyUsage());
-    $("#temp_num").html(thermostat.temperature);
-  });
+    energyAndTemperature();
+  })
 
   $("#powerSave").click(function(event) {
     thermostat.togglePSM();
-    $("#powerSaveDisplay").toggle("fast", function() {
-      $("#powerSaveDisplay").css("color", "lime")
-    });
-
-  });
+    if (thermostat.powerSavingMode === false) {
+      $("#powerSaveDisplay").css("color", "grey")
+    } else if (thermostat.powerSavingMode === true) {
+      energyAndTemperature();
+      $("#powerSaveDisplay").css("color", "lightgreen")
+    }
+  })
 
   $("#energyUsage").html(thermostat.energyUsage());
 
-
-
-});
+})

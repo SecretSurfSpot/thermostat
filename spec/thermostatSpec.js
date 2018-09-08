@@ -65,12 +65,21 @@ describe('Thermostat', function(){
       }
       expect(thermostat.getCurrentTemperature()).toEqual(25);
     });
+
+    it('if temperature is > 25,reduce back to 25 degrees', function(){
+      thermostat.togglePSM();
+      for (var i = 1; i < 11; i++) {
+        thermostat.up();
+      }
+      thermostat.togglePSM();
+      expect(thermostat.getCurrentTemperature()).toEqual(25);
+    });
   });
 
   describe('When power saving mode is off', function(){
     it('has a maximum temperature of 32 degrees', function(){
+      thermostat.togglePSM();
       for (var i = 1; i < 14; i++) {
-        thermostat.togglePSM();
         thermostat.up();
       }
       expect(thermostat.getCurrentTemperature()).toEqual(32);
@@ -82,21 +91,21 @@ describe('Thermostat', function(){
       for (var i = 1; i < 4; i++) {
         thermostat.down();
       }
-      expect(thermostat.energyUsage()).toEqual('low-usage');
+      expect(thermostat.energyUsage()).toEqual('Low Usage');
     });
 
     it('is at medium energy usage if temperature is <25 degrees', function(){
       for (var i = 1; i < 5; i++) {
         thermostat.up();
       }
-      expect(thermostat.energyUsage()).toEqual('medium-usage');
+      expect(thermostat.energyUsage()).toEqual('Medium Usage');
     });
 
     it('is at high energy usage if temperature is >=25 degrees', function(){
       for (var i = 1; i < 6; i++) {
         thermostat.up();
       }
-      expect(thermostat.energyUsage()).toEqual('high-usage');
+      expect(thermostat.energyUsage()).toEqual('High Usage');
     });
   });
 

@@ -25,29 +25,36 @@ body {
 
 #thermo_body {
   background-color: cadetblue;
-  /* padding-top: 5px;
-  padding-bottom: 5px; */
   grid-column: 1 / 4;
   display: grid;
-  height: 200px;
+  height: 150px;
 }
 
 #temp_num{
-  font-size: 6em;
+  font-size: 8em;
 }
 
 #celsius {
   font-size: 1em;
-  align: left;
+  vertical-align:80px;
+}
+
+#psm_and_energy_wrapper {
+  background-color: cadetblue;
+  grid-column: 1 / 4;
+  height: 20px;
 }
 
 #powerSaveDisplay {
   color: lightgreen;
+  font-size: .8em;
   margin-right: 50px;
 }
 
 #energyUsage {
   color: black;
+  font-size: .8em;
+  margin-left: 50px;
 }
 
 #utility_btn {

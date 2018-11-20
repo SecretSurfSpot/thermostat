@@ -28,6 +28,7 @@ git clone https://github.com/SecretSurfSpot/thermostat.git
 To test the application:
 - Navigate to the project root (thermostat)
 - In the project root execute `open -a "Google Chrome" SpecRunner.html`
+
 ![SpecRunner Screenshot](https://github.com/SecretSurfSpot/thermostat/blob/master/images/SpecRunnerScreenshot.png)
 
 

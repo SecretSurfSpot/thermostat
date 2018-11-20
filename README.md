@@ -35,4 +35,4 @@ To interact with the app (see screenshot of the thermostat interface below):
 - Use the Reset button to reset the temperature to 20 degrees.
 - Use the PSM button to invoke Power Saving Mode: PSM limits the temperature achievable to 25 degrees, or if the temperature is already above 25 degrees, it will reduce it to 25 degrees and restrict any further increase. PSM can be toggled on or off.
 
-![Thermostat interface](https://github.com/SecretSurfSpot/thermostat/images/thermostat_interface.png)
+![Thermostat interface](https://github.com/SecretSurfSpot/thermostat/blob/master/images/thermostat%20interface.png)

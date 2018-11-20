@@ -21,7 +21,7 @@ The project can be found here:
 https://github.com/SecretSurfSpot/thermostat
 
 ### Installation
-- Clone the repo to your local machine:
+- Clone the repo to your local machine:  
 git clone https://github.com/SecretSurfSpot/thermostat.git
 
 ### Testing
@@ -33,7 +33,8 @@ To test the application:
 
 
 ### User Interaction
-To interact with the app (see screenshot of the thermostat interface below):
+To interact with the app:
+- In the project root execute `open -a "Google Chrome" index.html`
 - Use the plus (+) and minus (-) buttons to increase/decrease the temperature.
 - Use the Reset button to reset the temperature to 20 degrees.
 - Use the PSM button to invoke Power Saving Mode: PSM limits the temperature achievable to 25 degrees, or if the temperature is already above 25 degrees, it will reduce it to 25 degrees and restrict any further increase. PSM can be toggled on or off.
